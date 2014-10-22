@@ -1,0 +1,53 @@
+<script type="text/template" id="usuario">
+    <div class="form-group">
+    <form role="form" id="<%= componentId %>-usuarioForm">
+    <% if(usuario.id) {%>
+    <input type="hidden" name="id" value="<%= usuario.id %>"/>
+    <% }%>
+		<div class="form-group" >
+		<label for="cantidadVisitas">Cantidad Visitas</label>
+    	<input type="text" class="form-control" id="cantidadVisitas" name="cantidadVisitas" placeholder="Enter value" value="<%= usuario.get('cantidadVisitas') %>"/>	
+		</div>
+		<div class="form-group" >
+		<label for="carrera">Carrera</label>
+    	<input type="text" class="form-control" id="carrera" name="carrera" placeholder="Enter value" value="<%= usuario.get('carrera') %>"/>	
+		</div>
+		<div class="form-group" >
+		<label for="cursoActual">Curso Actual</label>
+    	<input type="text" class="form-control" id="cursoActual" name="cursoActual" placeholder="Enter value" value="<%= usuario.get('cursoActual') %>"/>	
+		</div>
+		<div class="form-group" >
+		<label for="codigo">Codigo</label>
+    	<input type="text" class="form-control" id="codigo" name="codigo" placeholder="Enter value" value="<%= usuario.get('codigo') %>"/>	
+		</div>
+		<div class="form-group" >
+		<label for="seccMagistral">Secc Magistral</label>
+    	<input type="text" class="form-control" id="seccMagistral" name="seccMagistral" placeholder="Enter value" value="<%= usuario.get('seccMagistral') %>"/>	
+		</div>
+		<div class="form-group" >
+		<label for="seccComplementaria">Secc Complementaria</label>
+    	<input type="text" class="form-control" id="seccComplementaria" name="seccComplementaria" placeholder="Enter value" value="<%= usuario.get('seccComplementaria') %>"/>	
+		</div>
+		<div class="form-group" >
+		<label for="name">Name</label>
+    	<input type="text" class="form-control" id="name" name="name" placeholder="Enter value" value="<%= usuario.get('name') %>"/>	
+		</div>
+		<div class="form-group" >
+		<label for="apellidos">Apellidos</label>
+    	<input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Enter value" value="<%= usuario.get('apellidos') %>"/>	
+		</div>
+		<div class="form-group" >
+		<label for="contrasenia">Contrasenia</label>
+    	<input type="text" class="form-control" id="contrasenia" name="contrasenia" placeholder="Enter value" value="<%= usuario.get('contrasenia') %>"/>	
+		</div>
+		<div class="form-group" >
+		<label for="correo">Correo</label>
+    	<input type="text" class="form-control" id="correo" name="correo" placeholder="Enter value" value="<%= usuario.get('correo') %>"/>	
+		</div>
+		<div class="form-group" >
+		<label for="rol">Rol</label>
+    	<input type="text" class="form-control" id="rol" name="rol" placeholder="Enter value" value="<%= usuario.get('rol') %>"/>	
+		</div>
+    </form>
+    </div>
+</script> 

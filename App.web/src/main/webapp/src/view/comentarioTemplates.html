@@ -1,0 +1,25 @@
+<script type="text/template" id="comentario">
+    <div class="form-group">
+    <form role="form" id="<%= componentId %>-comentarioForm">
+    <% if(comentario.id) {%>
+    <input type="hidden" name="id" value="<%= comentario.id %>"/>
+    <% }%>
+		<div class="form-group" >
+		<label for="contenido">Contenido</label>
+    	<input type="text" class="form-control" id="contenido" name="contenido" placeholder="Enter value" value="<%= comentario.get('contenido') %>"/>	
+		</div>
+		<div class="form-group" >
+			<label for="fechaCreacion">Fecha Creacion</label>
+    		<input type="text" data-converter="date" data-date-format="dd/mm/yyyy" class="form-control" id="fechaCreacion"  name="fechaCreacion" placeholder="Enter value" />
+    		<%= '<scr'+'ipt>' %>
+        	$('#fechaCreacion').datepicker({autoclose:true});
+        	$('#fechaCreacion').datepicker('setDate',App.Utils.Converter.date.toDate("<%= comentario.get('fechaCreacion') %>"));
+    		<%= '</scr'+'ipt>' %>
+		</div>
+		<div class="form-group" >
+		<label for="name">Name</label>
+    	<input type="text" class="form-control" id="name" name="name" placeholder="Enter value" value="<%= comentario.get('name') %>"/>	
+		</div>
+    </form>
+    </div>
+</script> 
