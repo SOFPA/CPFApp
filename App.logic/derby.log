@@ -1,0 +1,10 @@
+----------------------------------------------------------------
+Thu Oct 23 12:37:57 COT 2014:
+ Arrancando Derby versión The Apache Software Foundation - Apache Derby - 10.9.1.0 - (1344872): instancia a816c00e-0149-3e16-1c9a-00001b712230 
+en el directorio de base de datos C:\Users\estudiante\AppData\Local\Temp\gfembed993120055877287714tmp\lib\databases\embedded_default  con el cargador de clases sun.misc.Launcher$AppClassLoader@1d262f7c
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_65-b19
+user.dir=C:\Users\estudiante\Documents\ClinicaProblemas\CPFApp\App.logic
+derby.system.home=null
+Cargador de clases de base de datos iniciado - derby.database.classpath=''
