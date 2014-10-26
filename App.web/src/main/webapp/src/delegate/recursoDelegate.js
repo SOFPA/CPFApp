@@ -31,7 +31,7 @@ define(['delegate/_recursoDelegate'], function() {
     App.Delegate.RecursoDelegate = App.Delegate._RecursoDelegate.extend({
         search: function(recurso, callback, callbackError ){
             console.log('Recurso Search: ');
-            $ajax({
+            $.ajax({
                 url: '/App.web/webresources/Recurso/search/query',
                 type: 'GET',
                 data: $.param(recurso.toJSON()),
