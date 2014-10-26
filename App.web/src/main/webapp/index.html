@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="src/css/lista.css">
         <script src="./js/vendor/jquery-1.9.1.js"></script>
         <script src="./js/vendor/bootstrap.min.js"></script>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -21,8 +22,28 @@
             </script>
     </head>
     <body>
-        <div id="header" >
-            <div class="btn-group navbar-default menu" style="width: 100%;">
+         <div id="header" >
+         
+             <object data="https://cmua.uniandes.edu.co/images/logo_uniandes2.png" height="88" width="210" align="left"></object>
+             <h2 style="text-align: right">Clinica de Problemas</h2>   
+             <div align="center">
+                <div id="nav">
+                    <nav>
+                      <ul>
+                          <li>
+                              <a href="#" onclick="redirectFrame('recurso.html'); return false;">Banco de Recursos</a>
+                          </li>
+                          <li>
+                              <a href="#" onclick="redirectFrame('recurso.html'); return false;">U.T.I</a>
+                          </li>
+                          <li>
+                              <a href="#" onclick="redirectFrame('recurso.html'); return false;">Quienes Somos</a>
+                          </li>
+                      </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--div class="btn-group navbar-default menu" style="width: 100%;">
 	            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 	                Menu <span class="caret"></span>
 	            </button>
@@ -37,9 +58,9 @@
 	          			      <li><a href="#" onclick="redirectFrame('recursoMaster.html'); return false;">Recurso Master</a></li>
        				
 	            </ul>
-	        </div>
-	        <hr/>
+	        </div-->
         </div>
-        <iframe id="container" src="" style="width: 100%; height: 100%; border: 0; margin: 0;"></iframe> 
+        <iframe id="container" src="" style="width: 100%; height: 100%; border: 0; margin: 0;">
+        </iframe> 
     </body>
 </html>
