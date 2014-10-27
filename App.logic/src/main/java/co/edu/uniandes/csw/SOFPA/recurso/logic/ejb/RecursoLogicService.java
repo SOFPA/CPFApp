@@ -32,6 +32,8 @@ package co.edu.uniandes.csw.SOFPA.recurso.logic.ejb;
 
 import co.edu.uniandes.csw.SOFPA.recurso.logic.api.IRecursoLogicService;
 import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoPageDTO;
+import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoDTO;
+import java.io.File;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless; 
@@ -45,5 +47,11 @@ import javax.inject.Inject;
 public class RecursoLogicService extends _RecursoLogicService implements IRecursoLogicService {
     public RecursoPageDTO getRecursosPorTema(String tema){
         return persistance.getRecursosPorTema(tema);
+    }
+    
+    @SuppressWarnings("unchecked")
+    public RecursoDTO createRecurso(File file, RecursoDTO recurso){
+       // return persistance.createRecurso(file, recurso);
+        return null;
     }
 }

@@ -41,6 +41,15 @@ define(['delegate/_recursoDelegate'], function() {
             },this)).error(_.bind(function(data){
                 callbackError(data);
             },this));
-        } 
+        },
+        upload: function(file){
+          console.log('Uploading: ');
+          $.ajax({
+              url: '/App.web/webresources/Recurso',
+              type: 'POST',
+              data: $.param(file.toJSON()),
+              contentType: 'application/json'
+          });
+        }
     });
 });
