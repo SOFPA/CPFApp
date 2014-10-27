@@ -44,6 +44,26 @@ define(['component/_recursoComponent'], function() {
                 },
                 this.execSearch,
                 this);
+                
+                this.toolbarComponent.addButton({
+                    name : 'avalar',
+                    displayName: 'Avalar', 
+                    icon: '',
+                    show: true    
+            },
+                function() {
+                 self.componentController.hacerLista();},
+                this);
+                
+                this.toolbarComponent.addButton({
+                    name : 'exec-avalar',
+                    displayName: 'Avalar', 
+                    icon:'',
+                    show: false    
+                },
+                this.execAvalar,
+                this);
+            
                 this.toolbarComponent.addButton({
                     name : 'cancel-search',
                     idsplayName: 'Cancel', 
@@ -84,6 +104,31 @@ define(['component/_recursoComponent'], function() {
                 this.toolbarComponent.hideButton('cancel-search');
                 this.toolbarComponent.render();
                 this.componentController.recursoSearch(this.list,this);
+            },
+            
+            execAvalar: function(){
+                this.toolbarComponent.showButton('create');
+                this.toolbarComponent.showButton('refresh');
+                this.toolbarComponent.showButton('print');
+                this.toolbarComponent.showButton('search');
+                this.toolbarComponent.hideButton('exec-search');
+                this.toolbarComponent.hideButton('cancel-search');
+                this.toolbarComponent.showButton('avalar');
+                this.toolbarComponent.render();
+                this.componentController.avalarRecurso();
+            },
+            
+            avalar: function()
+            {
+                this.toolbarComponent.hideButton('create');
+                this.toolbarComponent.hideButton('save');
+                this.toolbarComponent.hideButton('cancel');
+                this.toolbarComponent.hideButton('refresh');
+                this.toolbarComponent.hideButton('print');
+                this.toolbarComponent.hideButton('search');
+                this.toolbarComponent.showButton('exec-avalar');
+                this.toolbarComponent.render();
+                this.componentController.create();
             }
     });
     return App.Component.RecursoComponent;
