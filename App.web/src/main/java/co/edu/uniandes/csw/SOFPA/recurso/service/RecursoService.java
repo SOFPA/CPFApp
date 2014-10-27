@@ -36,6 +36,12 @@ import co.edu.uniandes.csw.SOFPA.recurso.persistence.converter.RecursoConverter;
 import co.edu.uniandes.csw.SOFPA.recurso.persistence.entity.RecursoEntity;
 import java.util.List;
 import java.io.File;
+import javax.servlet.http.Part;
+import java.io.PrintWriter;
+import java.io.OutputStream;
+import java.io.InputStream;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
 
 import javax.ejb.Stateless;
 import javax.ws.rs.Consumes;
@@ -73,9 +79,33 @@ public class RecursoService extends _RecursoService {
     @POST
     @Path("/Recurso")
     @SuppressWarnings("unchecked")
-    public RecursoDTO createRescurso(@QueryParam("")File fileP, RecursoDTO dto){
+    public RecursoDTO createRescurso(@QueryParam("")Part fileP, @QueryParam("")RecursoDTO dto, @QueryParam("")PrintWriter pWriter){
        final String dPath = "";
-       final File filePart = fileP;
+       final String name = getName(fileP);
+       OutputStream out = null;
+       InputStream contenido = null;
+       final PrintWriter writer = pWriter;
+       try{
+           out = new FileOutputStream(new File(dPath + File.separator + name));
+           contenido = fileP.getInputStream();
+           int read = 0;
+           final byte[] bytes = new byte[1024];
+           while((read = contenido.read(bytes)) != -1){
+               out.write(bytes, 0, read);
+           }
+       }catch(Exception e){
+           System.out.println(e.getMessage());
+       }
        return null;
+    }
+    
+    public String getName(Part fileP){
+        final String partHeader = fileP.getHeader("content-disposition");
+        for(String header: fileP.getHeader("content-disposition").split(";")){
+            if(header.trim().startsWith("filename")){
+                return header.substring(header.indexOf('=') + 1).trim().replace("\"", "");
+            }
+        }
+        return null;
     }
 }
