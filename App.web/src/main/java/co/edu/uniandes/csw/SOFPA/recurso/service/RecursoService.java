@@ -89,12 +89,23 @@ public class RecursoService extends _RecursoService {
            out = new FileOutputStream(new File(dPath + File.separator + name));
            contenido = fileP.getInputStream();
            int read = 0;
-           final byte[] bytes = new byte[1024];
+           final byte[] bytes = new byte[8388608];
            while((read = contenido.read(bytes)) != -1){
                out.write(bytes, 0, read);
            }
        }catch(Exception e){
            System.out.println(e.getMessage());
+       }finally{
+           try{
+          if (out != null) {
+           out.close();
+           }
+           if (writer != null) {
+           writer.close();
+         }
+           }catch(Exception e){
+               System.out.println(e.getMessage());
+           }
        }
        return null;
     }
