@@ -6,19 +6,47 @@
     <% }%>
 		<div class="form-group" >
 		<label for="tema">Tema</label>
-    	<input type="text" class="form-control" id="tema" name="tema" placeholder="Enter value" value="<%= recurso.get('tema') %>"/>	
+    	<select class="form-control" id="tema" name="tema" placeholder="Enter value" value="<%= recurso.get('tema') %>">
+    
+            <option name=Tema1 value=Tema1> Tema1 </option>
+            <option name=Tema2 value=Tema2> Tema2 </option>
+            <option name=Tema3 value=Tema3> Tema3 </option>
+            </select>
+    
 		</div>
 		<div class="form-group" >
 		<label for="tipo">Tipo</label>
-    	<input type="text" class="form-control" id="tipo" name="tipo" placeholder="Enter value" value="<%= recurso.get('tipo') %>"/>	
+    	<select class="form-control" id="tipo" name="tipo" placeholder="Enter value" value="<%= recurso.get('tipo') %>">	
+            <option name=Parciales value=Parciales> Parciales </option>
+            <option name=Tareas value=Tareas> Tareas </option>
+            <option name=Talleres value=Talleres> Talleres </option>
+            </select>
+    
 		</div>
 		<div class="form-group" >
 		<label for="curso">Curso</label>
-    	<input type="text" class="form-control" id="curso" name="curso" placeholder="Enter value" value="<%= recurso.get('curso') %>"/>	
+    	<select class="form-control" id="curso" name="curso" placeholder="Enter value" value="<%= recurso.get('curso') %>">	
+            <option name=FISI1000 – Prefísica  value=FISI1000> FISI1000 – Prefísica  </option>
+            <option name=FISI1012 – Física Básica 1 value=FISI1012 – Física Básica 1> FISI1012 – Física Básica 1 </option>
+            <option name=FISI1018 – Física 1  value=FISI1018 – Física 1 > FISI1018 – Física 1  </option>
+            <option name=FISI1022 – Física Básica 2  value=FISI1022 – Física Básica 2 > FISI1022 – Física Básica 2  </option>
+            <option name=FISI1028 – Física 2 value=FISI1028 – Física 2> FISI1028 – Física 2 </option>
+            <option name=FISI1038 – Ondas y Fluidos value=FISI1038 – Ondas y Fluidos> FISI1038 – Ondas y Fluidos </option>
+            <option name=FISI1048 – Física Moderna value=FISI1048 – Física Moderna> FISI1048 – Física Moderna </option>
+            
+
+            </select>
 		</div>
+        
+        
 		<div class="form-group" >
 		<label for="dificultad">Dificultad</label>
-    	<input type="text" class="form-control" id="dificultad" name="dificultad" placeholder="Enter value" value="<%= recurso.get('dificultad') %>"/>	
+    	<select class="form-control" id="dificultad" name="dificultad" placeholder="Enter value" value="<%= recurso.get('dificultad') %>">
+            <option name=Bajo value=1> Bajo </option>
+            <option name=Intermedio value=2> Intermedio </option>
+            <option name=Alto value=3> Alto </option>
+    
+            </select>
 		</div>
 		<div class="form-group" >
 		<label for="semestre">Semestre</label>
@@ -51,4 +79,12 @@
 		</div>
     </form>
     </div>
+    
+    
+        <DIV ALIGN=center><form method="POST" enctype="multipart/form-data"
+		action="/upload">
+		Archivo a subir: <input type="file" name="file"><br /> Name: <input
+			type="text" name="Nombre"><br /> <br /> <input type="submit"
+			value="Subir"> Presione aquí para subir un archivo!
+	</DIV>
 </script> 
