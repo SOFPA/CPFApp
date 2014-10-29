@@ -69,6 +69,14 @@
         	$('#ultimaFechaVisita').datepicker('setDate',App.Utils.Converter.date.toDate("<%= recurso.get('ultimaFechaVisita') %>"));
     		<%= '</scr'+'ipt>' %>
 		</div>
+		<div class="form-group" >
+		<label for="name">Name</label>
+    	<input type="text" class="form-control" id="name" name="name" placeholder="Enter value" value="<%= recurso.get('name') %>"/>	
+		</div>
+		<div class="form-group" >
+		<label for="uRL">U R L</label>
+    	<input type="text" class="form-control" id="uRL" name="uRL" placeholder="Enter value" value="<%= recurso.get('uRL') %>"/>	
+		</div>
     </form>
     </div>
     

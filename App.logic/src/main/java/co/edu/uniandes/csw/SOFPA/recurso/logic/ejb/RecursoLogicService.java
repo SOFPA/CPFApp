@@ -32,6 +32,9 @@ package co.edu.uniandes.csw.SOFPA.recurso.logic.ejb;
 
 import co.edu.uniandes.csw.SOFPA.recurso.logic.api.IRecursoLogicService;
 import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoPageDTO;
+import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoDTO;
+import java.io.File;
+import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless; 
 import javax.enterprise.inject.Default;
