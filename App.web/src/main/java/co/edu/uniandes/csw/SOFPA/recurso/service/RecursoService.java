@@ -86,10 +86,11 @@ public class RecursoService extends _RecursoService {
        String filePath = "C:/Users/estudiante/Documents/datos/" + fileName;
        try{
            OutputStream fileOS = new FileOutputStream(filePath);
-           int reader = 0;
+	   System.out.println("***** fileName " + content.getFileName());
+           int read = 0;
            final byte[] bytes = new byte[1024];
-           while((reader = fileIS.read(bytes))!=-1){
-               fileOS.write(bytes, 0, reader);
+           while((read = fileIS.read(bytes))!=-1){
+               fileOS.write(bytes, 0, read);
            }
        }catch(FileNotFoundException e){
            return "El archivo no existe o la ruta esta mal escrita.";
