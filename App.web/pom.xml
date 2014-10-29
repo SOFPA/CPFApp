@@ -7,6 +7,24 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <dependencies>
+        <dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>3.0.1</version>
+		<scope>provided</scope>
+	</dependency>
+        <!-- jersey implementation library -->
+	<dependency>
+		<groupId>org.glassfish.jersey.containers</groupId>
+		<artifactId>jersey-container-servlet</artifactId>
+		<version>2.11</version>
+	</dependency>
+    <!-- jersey media multipart for file upload -->
+	<dependency>
+		<groupId>org.glassfish.jersey.media</groupId>
+		<artifactId>jersey-media-multipart</artifactId>
+		<version>2.11</version>
+	</dependency>
         <!-- JUnit -->
         <dependency>
             <groupId>junit</groupId>

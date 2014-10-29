@@ -78,6 +78,7 @@ public class RecursoService extends _RecursoService {
     }
     
     @POST
+    @Path("/cargar")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.TEXT_PLAIN)
     public String cargarArchivo(@FormDataParam("file")InputStream fileIS, @FormDataParam("file")FormDataContentDisposition content)throws FileNotFoundException, IOException{

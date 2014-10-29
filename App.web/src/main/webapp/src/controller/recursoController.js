@@ -48,11 +48,6 @@ define(['controller/_recursoController','delegate/recursoDelegate'], function() 
             });
         },
         
-        recursoUpload: function(file){
-            var del = new App.Delegate.RecursoDelegate();
-            del.upload(file);
-        },
-        
         avalarRecurso: function(callback,context){
             var self = this;
             var model = $('#' + this.componentId + '-recursoForm').serializeObject();
