@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
+import org.glassfish.jersey.media.multipart.MultiPartFeature;
 
 @ApplicationPath("/webresources")
 public class WebApp extends Application {
@@ -26,7 +27,7 @@ public class WebApp extends Application {
                        classes.add(classInfo.load());
 					}                
                 }
-                
+                classes.add(MultiPartFeature.class);
                 return classes;
             } catch (IOException ex) {
                 Logger.getLogger(WebApp.class.getName()).log(Level.SEVERE, null, ex);

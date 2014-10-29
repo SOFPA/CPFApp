@@ -48,10 +48,4 @@ public class RecursoLogicService extends _RecursoLogicService implements IRecurs
     public RecursoPageDTO getRecursosPorTema(String tema){
         return persistance.getRecursosPorTema(tema);
     }
-    
-    @SuppressWarnings("unchecked")
-    public RecursoDTO createRecurso(File file, RecursoDTO recurso){
-       // return persistance.createRecurso(file, recurso);
-        return null;
-    }
 }

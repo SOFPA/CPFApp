@@ -35,13 +35,11 @@ import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoDTO;
 import co.edu.uniandes.csw.SOFPA.recurso.persistence.converter.RecursoConverter;
 import co.edu.uniandes.csw.SOFPA.recurso.persistence.entity.RecursoEntity;
 import java.util.List;
-import java.io.File;
-import javax.servlet.http.Part;
-import java.io.PrintWriter;
-import java.io.OutputStream;
-import java.io.InputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import javax.ejb.Stateless;
 import javax.ws.rs.Consumes;
@@ -55,10 +53,11 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.UriInfo;
 
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import org.glassfish.jersey.media.multipart.FormDataParam;
+
 @Path("/Recurso")
 @Stateless
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
 public class RecursoService extends _RecursoService {
     
     @Context
@@ -66,6 +65,8 @@ public class RecursoService extends _RecursoService {
     
     @GET
     @Override
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public RecursoPageDTO getRecursos(@QueryParam("page") Integer page, @QueryParam("maxRecords")Integer maxRecords){
         
         MultivaluedMap<String, String> queryParams = uriInfo.getQueryParameters();
@@ -77,46 +78,23 @@ public class RecursoService extends _RecursoService {
     }
     
     @POST
-    @Path("/Recurso")
-    @SuppressWarnings("unchecked")
-    public RecursoDTO createRescurso(@QueryParam("")Part fileP, @QueryParam("")RecursoDTO dto, @QueryParam("")PrintWriter pWriter){
-       final String dPath = "";
-       final String name = getName(fileP);
-       OutputStream out = null;
-       InputStream contenido = null;
-       final PrintWriter writer = pWriter;
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.TEXT_PLAIN)
+    public String cargarArchivo(@FormDataParam("file")InputStream fileIS, @FormDataParam("file")FormDataContentDisposition content)throws FileNotFoundException, IOException{
+       String fileName = content.getFileName();
+       String filePath = "C:/Users/estudiante/Documents/datos/" + fileName;
        try{
-           out = new FileOutputStream(new File(dPath + File.separator + name));
-           contenido = fileP.getInputStream();
-           int read = 0;
-           final byte[] bytes = new byte[8388608];
-           while((read = contenido.read(bytes)) != -1){
-               out.write(bytes, 0, read);
+           OutputStream fileOS = new FileOutputStream(filePath);
+           int reader = 0;
+           final byte[] bytes = new byte[1024];
+           while((reader = fileIS.read(bytes))!=-1){
+               fileOS.write(bytes, 0, reader);
            }
-       }catch(Exception e){
-           System.out.println(e.getMessage());
-       }finally{
-           try{
-          if (out != null) {
-           out.close();
-           }
-           if (writer != null) {
-           writer.close();
-         }
-           }catch(Exception e){
-               System.out.println(e.getMessage());
-           }
+       }catch(FileNotFoundException e){
+           return "El archivo no existe o la ruta esta mal escrita.";
+       }catch(IOException e){
+           return " =( Error critico al subir un archivo, por favor comuniquese con el desarrollador.";
        }
-       return null;
-    }
-    
-    public String getName(Part fileP){
-        final String partHeader = fileP.getHeader("content-disposition");
-        for(String header: fileP.getHeader("content-disposition").split(";")){
-            if(header.trim().startsWith("filename")){
-                return header.substring(header.indexOf('=') + 1).trim().replace("\"", "");
-            }
-        }
-        return null;
+       return "Archivo subido correctamente";
     }
 }
