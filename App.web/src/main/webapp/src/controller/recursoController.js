@@ -31,8 +31,8 @@ define(['controller/_recursoController', 'delegate/recursoDelegate'], function()
     App.Controller.RecursoController = App.Controller._RecursoController.extend({
         postInit: function(options) {
             var self = this;
-            this.listRecursosPorAvalarTemplate = _.template($('#recursosPorAvalarList').html());
-            this.listRecursosPorAvalarModelClass = options.listModelClass;
+            this.listRecursosTemplate = _.template($('#recursosPorAvalarList').html());
+            this.listRecursosModelClass = options.listModelClass;
         },
         guardarRecurso: function(params){
             var self = this;
@@ -68,13 +68,11 @@ define(['controller/_recursoController', 'delegate/recursoDelegate'], function()
             /*Aquí se utiliza el efecto gráfico backbone deslizar. “$el” hace referencia al <div id=”main”> ubicado en el index.html. Dentro de este div se despliegue la tabla.*/
             this.$el.slideUp("fast", function() {
                 /*Establece que en el <div> se despliegue el template de la variable “”. Como parámetros entran las variables establecidas dentro de los tags <%%> con sus valores como un objeto JSON. En este caso, la propiedad sports tendrá la lista que instanció “sportSearch” en la variable del bucle <% _.each(sports, function(sport) { %>*/
-
-                self.$el.html(self.listRecursosPorAvalarTemplate({recursos: self.recursosPorAvalarModelList.models}));
+                self.$el.html(self.listRecursosTemplate({recursos: self.recursosPorAvalarModelList.models}));
                 self.$el.slideDown("fast");
             });
         },
         hacerLista: function(params) {
-            //Elementos para invocar el servicio getSports
             if (params) {
                 var data = params.data;
             }
@@ -86,17 +84,15 @@ define(['controller/_recursoController', 'delegate/recursoDelegate'], function()
                 if (!this.recursoModelList) {
                     this.recursoModelList = new this.listModelClass();
                 }
-                //se obtienen los deportes del servicio getSports
                 this.recursoModelList.fetch({
                     data: data,
                     success: function() {
                         var elementos = self.recursoModelList.models;
-                        //Ahora se instancia el nuevo modelo construido
                         self.recursosPorAvalartModelList = new App.Model.RecursosPorAvalartList;
                         //Se itera sobre la variable elementos, que corresponden a la lista de modelos obtenida del servico REST getSports
                         _.each(elementos, function(d) {
-                            var model = new App.Model.RecursosPorAvalartModel({name: d.attributes.name, link: ''});
-                            //y se agrega finalmente a los modelos prom de la lista.
+                            var model = new App.Model.RecursosPorAvalartModel({name: d.attributes.name, link: 'a'});
+                            //y se agrega finalmente a los modelos de la lista.
                             self.recursosPorAvalartModelList.models.push(model);
                         });
                         //Se invoca la función de renderizado para que muestre los resultados en la nueva lista.
