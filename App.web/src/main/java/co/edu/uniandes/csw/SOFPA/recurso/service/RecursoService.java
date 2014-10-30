@@ -79,20 +79,11 @@ public class RecursoService extends _RecursoService {
     }
     
     @POST
-    @Path("/upload")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public RecursoDTO uploadArchive(@QueryParam("file") File file){
-        try{
-                String fileName = file.getName();
-                String filePath = "C:/Users/estudiante/Documents/datos/"+fileName;
-                OutputStream fileOS = new FileOutputStream(filePath);
-            }catch(Exception e){
-                    
-            }
+    public RecursoDTO app_JSONMetod(@QueryParam("page") Integer Page){
         return null;
     }
-    
     
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.TEXT_PLAIN)
