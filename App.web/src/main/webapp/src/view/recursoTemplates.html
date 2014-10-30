@@ -77,19 +77,12 @@
 		<label for="uRL">U R L</label>
     	<input type="text" class="form-control" id="uRL" name="uRL" placeholder="Enter value" value="<%= recurso.get('uRL') %>"/>	
 		</div>
+                <div class="form-group">
+                <label for="file">Archivo</label>
+        <input type="file" class="form-control" id="file" name="file" placeholder="Seleccione un archivo" value="<%=recurso.get('file') %>"/>
+                </div>
     </form>
     </div>
-    
-    
-        <DIV ALIGN=center>
-        <form   method="post" 
-                enctype="multipart/form-data"
-		action="/App.web/webresources/Recurso/cargar">
-		Archivo a subir: 
-                <input type="file" name="file">
-                <input type="submit" value="Subir"> 
-        </form>
-	</DIV>
 </script>
 
 <script type="text/template" id="recursosPorAvalarList">
