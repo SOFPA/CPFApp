@@ -91,7 +91,8 @@ define(['component/_recursoComponent', 'model/recursosPorAvalarModel'], function
             this.toolbarComponent.hideButton('print');
             this.toolbarComponent.hideButton('search');
             this.toolbarComponent.hideButton('exec-search');
-            this.toolbarComponent.hideButton('cancel-search');
+            this.toolbarComponent.showButton('cancel-search');
+            this.toolbarComponent.showButton('save');
             this.toolbarComponent.render();
             this.componentController.create();
         },

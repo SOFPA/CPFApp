@@ -45,7 +45,7 @@ define(['delegate/_recursoDelegate'], function() {
         uploadFile: function(params){
             console.log('Recurso Upload: ');
             $.ajax({
-                url: '/App.web/webresources/Recurso/save',
+                url: '/App.web/webresources/Recurso',
                 type: 'POST',
                 data: $.param(params.toJSON),
                 contentType: 'application/json'

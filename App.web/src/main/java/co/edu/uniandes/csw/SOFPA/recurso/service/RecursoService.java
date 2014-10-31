@@ -78,13 +78,13 @@ public class RecursoService extends _RecursoService {
         return super.getRecursos(page, maxRecords);
     }
     
-    @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public RecursoDTO app_JSONMetod(@QueryParam("page") Integer Page){
         return null;
     }
-    
+        
+    @POST
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.TEXT_PLAIN)
     public String cargarArchivo(@FormDataParam("file")InputStream fileIS, @FormDataParam("file")FormDataContentDisposition content)throws FileNotFoundException, IOException{
