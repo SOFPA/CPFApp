@@ -90,7 +90,7 @@
 
 <script type="text/template" id="recursosPorAvalarList">
     <div class="panel panel-default">
-    <!-- La información se va a presentar en una tabla -->
+    <!-- La informaciï¿½n se va a presentar en una tabla -->
     <table class="table striped">
 <!-- Estos son los encabezados de la tabla para cada campo del model (estos se visualizan) -->
     <thead>
@@ -105,11 +105,20 @@
 <!-- Se hace un nuevo <tr> por cada elemento en la lista-->
     <tr>
             <td><%= htmlEncode(recurso.getDisplay('name')) %></td>
-            <!-- esta instrucción indica qué campo del elemento actual del bucle se debe mostrar en ese lugar (cada <td> es una columna)>  -->
+            <!-- esta instrucciï¿½n indica quï¿½ campo del elemento actual del bucle se debe mostrar en ese lugar (cada <td> es una columna)>  -->
             <td><%= htmlEncode(recurso.getDisplay('link')) %></td>
     </tr>
     <% }); %>
     </tbody>
     </table>
+    </div>
+</script>
+
+
+<script type="text/template" id="mostrarRecurso">
+    <div class="panel panel-default">
+    <!-- Aqui se usa el api de google -->
+    <!-- Como se puede ver, la cuestion radica en cambiar la URL de prueba por la del recurso que se quiere desplegar y viene del servidor-->
+    <iframe src="http://docs.google.com/gview?url=http://infolab.stanford.edu/pub/papers/google.pdf&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
     </div>
 </script>
