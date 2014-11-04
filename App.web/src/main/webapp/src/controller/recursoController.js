@@ -31,8 +31,10 @@ define(['controller/_recursoController', 'delegate/recursoDelegate'], function()
     App.Controller.RecursoController = App.Controller._RecursoController.extend({
         postInit: function(options) {
             var self = this;
+            this.mostrarRecursoTemplate=_.template($('#mostrarRecurso').html());
             this.listRecursosTemplate = _.template($('#recursosPorAvalarList').html());
             this.listRecursosModelClass = options.listModelClass;
+            
         },
         guardarRecurso: function(params){
             var self = this;
@@ -65,9 +67,9 @@ define(['controller/_recursoController', 'delegate/recursoDelegate'], function()
         },
         _renderLista: function() {
             var self = this;
-            /*Aquí se utiliza el efecto gráfico backbone deslizar. “$el” hace referencia al <div id=”main”> ubicado en el index.html. Dentro de este div se despliegue la tabla.*/
+            /*Aquï¿½ se utiliza el efecto grï¿½fico backbone deslizar. ï¿½$elï¿½ hace referencia al <div id=ï¿½mainï¿½> ubicado en el index.html. Dentro de este div se despliegue la tabla.*/
             this.$el.slideUp("fast", function() {
-                /*Establece que en el <div> se despliegue el template de la variable “”. Como parámetros entran las variables establecidas dentro de los tags <%%> con sus valores como un objeto JSON. En este caso, la propiedad sports tendrá la lista que instanció “sportSearch” en la variable del bucle <% _.each(sports, function(sport) { %>*/
+                /*Establece que en el <div> se despliegue el template de la variable ï¿½ï¿½. Como parï¿½metros entran las variables establecidas dentro de los tags <%%> con sus valores como un objeto JSON. En este caso, la propiedad sports tendrï¿½ la lista que instanciï¿½ ï¿½sportSearchï¿½ en la variable del bucle <% _.each(sports, function(sport) { %>*/
                 self.$el.html(self.listRecursosTemplate({recursos: self.recursosPorAvalarModelList.models}));
                 self.$el.slideDown("fast");
             });
@@ -95,7 +97,7 @@ define(['controller/_recursoController', 'delegate/recursoDelegate'], function()
                             //y se agrega finalmente a los modelos de la lista.
                             self.recursosPorAvalartModelList.models.push(model);
                         });
-                        //Se invoca la función de renderizado para que muestre los resultados en la nueva lista.
+                        //Se invoca la funciï¿½n de renderizado para que muestre los resultados en la nueva lista.
                         self._renderLista(params);
                         Backbone.trigger(self.componentId + '-' + 'post-recurso-list', {view: self});
                     },
@@ -104,6 +106,20 @@ define(['controller/_recursoController', 'delegate/recursoDelegate'], function()
                     }
                 });
             }
+        },
+        _renderMostrar: function() {
+             var self = this;
+            /*Aquï¿½ se utiliza el efecto grï¿½fico backbone deslizar. ï¿½$elï¿½ hace referencia al <div id=ï¿½mainï¿½> ubicado en el index.html. Dentro de este div se despliegue la tabla.*/
+            this.$el.slideUp("fast", function() {
+                /*Establece que en el <div> se despliegue el template de la variable ï¿½ï¿½. Como parï¿½metros entran las variables establecidas dentro de los tags <%%> con sus valores como un objeto JSON. En este caso, la propiedad sports tendrï¿½ la lista que instanciï¿½ ï¿½sportSearchï¿½ en la variable del bucle <% _.each(sports, function(sport) { %>*/
+                self.$el.html(self.mostrarRecursoTemplate({recursos: self.mostrarRecurso}));
+                self.$el.slideDown("fast");
+            });
+        },
+        mostrarRecurso: function(params){
+            var url=params.url;
+            var data=params.data;
+            
         }
     });
     return App.Controller.RecursoController;
