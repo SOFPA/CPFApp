@@ -42,6 +42,12 @@ import javax.enterprise.inject.Default;
 import javax.persistence.Query;
 import co.edu.uniandes.csw.SOFPA.recurso.persistence.converter.RecursoConverter;
 import co.edu.uniandes.csw.SOFPA.recurso.persistence.entity.RecursoEntity;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 
 @Default
 @Stateless 
@@ -64,9 +70,22 @@ public class RecursoPersistence extends _RecursoPersistence  implements IRecurso
     }
     
     @SuppressWarnings("unchecked")
-    public RecursoDTO createRecurso(File file, RecursoDTO dto){
-        RecursoEntity entity=RecursoConverter.persistenceDTO2Entity(dto);
-	entityManager.persist(entity);
-	return RecursoConverter.entity2PersistenceDTO(entity);
+    public String createRecurso(InputStream fileIS, FormDataContentDisposition content){
+        String fileName = content.getFileName();
+       String filePath = "C://CPFApp/Documentos/" + fileName;
+       try{
+           OutputStream fileOS = new FileOutputStream(filePath);
+	   System.out.println("***** fileName " + content.getFileName());
+           int read = 0;
+           final byte[] bytes = new byte[1024];
+           while((read = fileIS.read(bytes))!=-1){
+               fileOS.write(bytes, 0, read);
+           }
+       }catch(FileNotFoundException e){
+           return "El archivo no existe o la ruta esta mal escrita.";
+       }catch(IOException e){
+           return " =( Error critico al subir un archivo, por favor comuniquese con el desarrollador.";
+       }
+       return "Archivo subido correctamente";
     }
 }

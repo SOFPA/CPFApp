@@ -88,21 +88,6 @@ public class RecursoService extends _RecursoService {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.TEXT_PLAIN)
     public String cargarArchivo(@FormDataParam("file")InputStream fileIS, @FormDataParam("file")FormDataContentDisposition content)throws FileNotFoundException, IOException{
-       String fileName = content.getFileName();
-       String filePath = "C:/Users/estudiante/Documents/datos/" + fileName;
-       try{
-           OutputStream fileOS = new FileOutputStream(filePath);
-	   System.out.println("***** fileName " + content.getFileName());
-           int read = 0;
-           final byte[] bytes = new byte[1024];
-           while((read = fileIS.read(bytes))!=-1){
-               fileOS.write(bytes, 0, read);
-           }
-       }catch(FileNotFoundException e){
-           return "El archivo no existe o la ruta esta mal escrita.";
-       }catch(IOException e){
-           return " =( Error critico al subir un archivo, por favor comuniquese con el desarrollador.";
-       }
-       return "Archivo subido correctamente";
+       return recursoLogicService.createRecurso(fileIS, content);
     }
 }

@@ -32,9 +32,10 @@ package co.edu.uniandes.csw.SOFPA.recurso.logic.api;
 
 import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoDTO;
 import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoPageDTO;
-import java.io.File;
+import java.io.InputStream;
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 
 public interface IRecursoLogicService extends _IRecursoLogicService {
     public RecursoPageDTO getRecursosPorTema(String tema);
-    public RecursoDTO createRecurso(File file, RecursoDTO dto);
+    public String createRecurso(InputStream fileIS, FormDataContentDisposition content);
 }

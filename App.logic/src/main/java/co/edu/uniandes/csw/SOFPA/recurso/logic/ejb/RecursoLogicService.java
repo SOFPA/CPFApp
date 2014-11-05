@@ -33,12 +33,13 @@ package co.edu.uniandes.csw.SOFPA.recurso.logic.ejb;
 import co.edu.uniandes.csw.SOFPA.recurso.logic.api.IRecursoLogicService;
 import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoPageDTO;
 import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoDTO;
-import java.io.File;
+import java.io.InputStream;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless; 
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 
 
 @Default
@@ -49,8 +50,8 @@ public class RecursoLogicService extends _RecursoLogicService implements IRecurs
         return persistance.getRecursosPorTema(tema);
     }
     
-    public RecursoDTO createRecurso(File file, RecursoDTO dto)
+    public String createRecurso(InputStream fileIS, FormDataContentDisposition content)
     {
-        return persistance.createRecurso(file, dto);
+        return persistance.createRecurso(fileIS, content);
     }
 }

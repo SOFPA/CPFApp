@@ -32,8 +32,9 @@ package co.edu.uniandes.csw.SOFPA.recurso.logic.mock;
 import co.edu.uniandes.csw.SOFPA.recurso.logic.api.IRecursoLogicService;
 import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoDTO;
 import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoPageDTO;
-import java.io.File;
 import javax.enterprise.inject.Alternative;
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import java.io.InputStream;
 import javax.inject.Singleton;
 @Singleton
 public class RecursoMockLogicService extends _RecursoMockLogicService implements IRecursoLogicService {
@@ -45,7 +46,7 @@ public class RecursoMockLogicService extends _RecursoMockLogicService implements
             return response;
         }
 
-    public RecursoDTO createRecurso(File file, RecursoDTO dto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String createRecurso(InputStream fileIS, FormDataContentDisposition content) {
+        return "Mock";
     }
 }
