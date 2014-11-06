@@ -37,5 +37,4 @@ import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 
 public interface IRecursoLogicService extends _IRecursoLogicService {
     public RecursoPageDTO getRecursosPorTema(String tema);
-    public String createRecurso(InputStream fileIS, FormDataContentDisposition content);
 }

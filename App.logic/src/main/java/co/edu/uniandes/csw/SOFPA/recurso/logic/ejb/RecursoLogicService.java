@@ -49,9 +49,4 @@ public class RecursoLogicService extends _RecursoLogicService implements IRecurs
     public RecursoPageDTO getRecursosPorTema(String tema){
         return persistance.getRecursosPorTema(tema);
     }
-    
-    public String createRecurso(InputStream fileIS, FormDataContentDisposition content)
-    {
-        return persistance.createRecurso(fileIS, content);
-    }
 }

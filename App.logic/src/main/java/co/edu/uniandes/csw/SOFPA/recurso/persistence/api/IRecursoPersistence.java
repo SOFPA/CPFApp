@@ -37,5 +37,4 @@ import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 
 public interface IRecursoPersistence extends _IRecursoPersistence {
     public RecursoPageDTO getRecursosPorTema(String tema); 
-    public String createRecurso(InputStream fileIS, FormDataContentDisposition content);
 }

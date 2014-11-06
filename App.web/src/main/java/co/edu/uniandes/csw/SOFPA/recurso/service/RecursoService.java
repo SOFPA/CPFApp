@@ -32,20 +32,10 @@ package co.edu.uniandes.csw.SOFPA.recurso.service;
 
 import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoPageDTO;
 import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoDTO;
-import co.edu.uniandes.csw.SOFPA.recurso.persistence.converter.RecursoConverter;
-import co.edu.uniandes.csw.SOFPA.recurso.persistence.entity.RecursoEntity;
-import java.util.List;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.File;
 
 import javax.ejb.Stateless;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -53,9 +43,6 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.UriInfo;
-
-import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
-import org.glassfish.jersey.media.multipart.FormDataParam;
 
 @Path("/Recurso")
 @Stateless
@@ -82,12 +69,5 @@ public class RecursoService extends _RecursoService {
     @Produces(MediaType.APPLICATION_JSON)
     public RecursoDTO app_JSONMetod(@QueryParam("page") Integer Page){
         return null;
-    }
-        
-    @POST
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Produces(MediaType.TEXT_PLAIN)
-    public String cargarArchivo(@FormDataParam("file")InputStream fileIS, @FormDataParam("file")FormDataContentDisposition content)throws FileNotFoundException, IOException{
-       return recursoLogicService.createRecurso(fileIS, content);
     }
 }

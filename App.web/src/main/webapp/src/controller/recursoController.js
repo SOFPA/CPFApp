@@ -36,11 +36,6 @@ define(['controller/_recursoController', 'delegate/recursoDelegate'], function()
             this.listRecursosModelClass = options.listModelClass;
             
         },
-        guardarRecurso: function(params){
-            var self = this;
-            var delegate = new App.Delegate.RecursoDelegate();
-            delegate.create(params);
-        },
         recursoSearch: function(callback, context) {
             var self = this;
             var model = $('#' + this.componentId + '-recursoForm').serializeObject();

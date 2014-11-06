@@ -33,8 +33,6 @@ import co.edu.uniandes.csw.SOFPA.recurso.logic.api.IRecursoLogicService;
 import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoDTO;
 import co.edu.uniandes.csw.SOFPA.recurso.logic.dto.RecursoPageDTO;
 import javax.enterprise.inject.Alternative;
-import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
-import java.io.InputStream;
 import javax.inject.Singleton;
 @Singleton
 public class RecursoMockLogicService extends _RecursoMockLogicService implements IRecursoLogicService {
@@ -45,8 +43,4 @@ public class RecursoMockLogicService extends _RecursoMockLogicService implements
             response.setRecords(data);
             return response;
         }
-
-    public String createRecurso(InputStream fileIS, FormDataContentDisposition content) {
-        return "Mock";
-    }
 }

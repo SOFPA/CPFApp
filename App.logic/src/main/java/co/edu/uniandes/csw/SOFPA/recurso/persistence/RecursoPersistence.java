@@ -68,24 +68,4 @@ public class RecursoPersistence extends _RecursoPersistence  implements IRecurso
         response.setRecords(RecursoConverter.entity2PersistenceDTOList(q.getResultList()));
         return response;
     }
-    
-    @SuppressWarnings("unchecked")
-    public String createRecurso(InputStream fileIS, FormDataContentDisposition content){
-        String fileName = content.getFileName();
-       String filePath = "C://CPFApp/Documentos/" + fileName;
-       try{
-           OutputStream fileOS = new FileOutputStream(filePath);
-	   System.out.println("***** fileName " + content.getFileName());
-           int read = 0;
-           final byte[] bytes = new byte[1024];
-           while((read = fileIS.read(bytes))!=-1){
-               fileOS.write(bytes, 0, read);
-           }
-       }catch(FileNotFoundException e){
-           return "El archivo no existe o la ruta esta mal escrita.";
-       }catch(IOException e){
-           return " =( Error critico al subir un archivo, por favor comuniquese con el desarrollador.";
-       }
-       return "Archivo subido correctamente";
-    }
 }
