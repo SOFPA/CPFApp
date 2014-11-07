@@ -33,12 +33,12 @@ define(['model/_recursoModel'], function() {
  		validate: function(attrs,options){
             var validationMessage = "";
             if(!attrs.name){
-                validationMessage = "The name can't be empty.";
+                validationMessage = "El nombre no puede estar vac�o";
             }
             if(attrs.semestre){
-                var semestreAño=parseInt(semestre.toString().split("-")[0]);
+                var semestreAno=parseInt(semestre.toString().split("-")[0]);
                 var semestreMes=parseInt(semestre.toString().split("-")[1]);
-                if(semestreAño>2014){
+                if(semestreAno>2014){
                     validationMessage = "Estamos en 2014!";
                 }
                 if(semestreMes!==10 || semestreMes!==20){
