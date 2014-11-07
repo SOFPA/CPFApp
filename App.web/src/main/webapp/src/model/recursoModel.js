@@ -35,9 +35,24 @@ define(['model/_recursoModel'], function() {
             if(!attrs.name){
                 validationMessage = "The name can't be empty.";
             }
+            if(attrs.semestre){
+                var semestreAño=parseInt(semestre.toString().split("-")[0]);
+                var semestreMes=parseInt(semestre.toString().split("-")[1]);
+                if(semestreAño>2014){
+                    validationMessage = "Estamos en 2014!";
+                }
+                if(semestreMes!==10 || semestreMes!==20){
+                    validationMessage = "Solo puede ser o 10 o 20 dependiento si es primer o segundo semestre";
+                }
+                
+            }
+            if(!attrs.uRL){
+                validationMessage = "Se debe llenar el campo de la url";
+            }
             if(validationMessage.length>0){
                return validationMessage;
             }
+            
         }
 
     });

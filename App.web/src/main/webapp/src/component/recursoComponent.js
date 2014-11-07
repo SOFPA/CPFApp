@@ -45,6 +45,8 @@ define(['component/_recursoComponent', 'model/recursosPorAvalarModel'], function
             },
             this.execSearch,
                     this);
+                
+            
 
             this.toolbarComponent.addButton({
                 name: 'avalar',
