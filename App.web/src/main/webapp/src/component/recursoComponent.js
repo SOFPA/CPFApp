@@ -30,7 +30,9 @@
 define(['component/_recursoComponent', 'model/recursosPorAvalarModel'], function() {
     App.Component.RecursoComponent = App.Component._RecursoComponent.extend({
         listModel: App.Model.RecursoList,
-        postInit: function() {
+        postInit: function() { 
+            this.toolbarComponent.hideButton('print');
+            
             this.listComponent.addAction({
                 name: 'view',
                 displayName: 'View',
