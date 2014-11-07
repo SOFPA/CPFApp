@@ -49,6 +49,10 @@
     
             </select>
 		</div>
+        <div class="form-group" >
+		<label for="semestre">Semestre</label>
+    	<input type="text" class="form-control" id="semestre" name="semestre" placeholder="Enter value 201X-XX" value="<%= recurso.get('semestre') %>"/>	
+		</div>
 		<div class="form-group" >
 	    <label>
     	  <input id="avalado" name="avalado" value="true" type="checkbox" <%= recurso.get('avalado')?'checked':'' %>> Avalado
