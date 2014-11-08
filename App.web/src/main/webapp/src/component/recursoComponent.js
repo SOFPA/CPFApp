@@ -57,7 +57,7 @@ define(['component/_recursoComponent', 'model/recursosPorAvalarModel'], function
                 show: true
             },
             function() {
-                self.componentController.hacerLista();
+                this.avalar();
             },
                     this);
 
@@ -144,7 +144,7 @@ define(['component/_recursoComponent', 'model/recursosPorAvalarModel'], function
             this.toolbarComponent.hideButton('search');
             this.toolbarComponent.showButton('exec-avalar');
             this.toolbarComponent.render();
-            this.componentController.create();
+            this.componentController.recursosPorAvalar();
         }
     });
     return App.Component.RecursoComponent;

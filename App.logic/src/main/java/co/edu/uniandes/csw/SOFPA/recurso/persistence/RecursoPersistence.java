@@ -68,4 +68,19 @@ public class RecursoPersistence extends _RecursoPersistence  implements IRecurso
         response.setRecords(RecursoConverter.entity2PersistenceDTOList(q.getResultList()));
         return response;
     }
+    
+    @SuppressWarnings("unchecked")
+    public RecursoPageDTO getRecursosPorAvalar()
+    {
+        Query count = entityManager.createQuery("select count(r) from RecursoEntity r");
+        Long regCount = 0L;
+        regCount = Long.parseLong(count.getSingleResult().toString());
+        Query q = entityManager.createQuery("SELECT r FROM RecursoEntity r");
+        //q.setParameter("Parameter", "%"+tema+"%");
+        
+        RecursoPageDTO response = new RecursoPageDTO();
+        response.setTotalRecords(regCount);
+        response.setRecords(RecursoConverter.entity2PersistenceDTOList(q.getResultList()));
+        return response;
+    }
 }

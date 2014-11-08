@@ -43,4 +43,8 @@ public class RecursoMockLogicService extends _RecursoMockLogicService implements
             response.setRecords(data);
             return response;
         }
+
+    public RecursoPageDTO getRecursosPorAvalar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
