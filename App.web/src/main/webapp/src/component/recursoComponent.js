@@ -38,7 +38,7 @@ define(['component/_recursoComponent', 'model/recursosPorAvalarModel'], function
                 displayName: 'View',
                 show: true,
                 icon: ''
-            }, this);
+            }, this.mostrarRecurso,this);
             this.toolbarComponent.addButton({
                 name: 'exec-search',
                 idsplayName: 'Search',
@@ -145,6 +145,10 @@ define(['component/_recursoComponent', 'model/recursosPorAvalarModel'], function
             this.toolbarComponent.showButton('exec-avalar');
             this.toolbarComponent.render();
             this.componentController.create();
+        },
+        mostrarRecurso: function()
+        {
+            this.componentController.mostrarRecurso();
         }
     });
     return App.Component.RecursoComponent;
