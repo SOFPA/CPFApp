@@ -51,18 +51,26 @@ public class RecursoService extends _RecursoService {
     @Context
     UriInfo uriInfo;
     
+//    @GET
+//    @Override
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public RecursoPageDTO getRecursos(@QueryParam("page") Integer page, @QueryParam("maxRecords")Integer maxRecords){
+//        
+//        MultivaluedMap<String, String> queryParams = uriInfo.getQueryParameters();
+//        String tema = queryParams.getFirst("tema");
+//        if( tema != null && !tema.isEmpty()){
+//            return recursoLogicService.getRecursosPorTema(tema);
+//        }
+//        return super.getRecursos(page, maxRecords);
+//    }
+    
     @GET
-    @Override
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public RecursoPageDTO getRecursos(@QueryParam("page") Integer page, @QueryParam("maxRecords")Integer maxRecords){
+    public RecursoPageDTO getRecursosPorAvalar(@QueryParam("page") Integer page, @QueryParam("maxRecords")Integer maxRecords){
         
-        MultivaluedMap<String, String> queryParams = uriInfo.getQueryParameters();
-        String tema = queryParams.getFirst("tema");
-        if( tema != null && !tema.isEmpty()){
-            return recursoLogicService.getRecursosPorTema(tema);
-        }
-        return super.getRecursos(page, maxRecords);
+        return recursoLogicService.getRecursosPorAvalar();
     }
     
     @Consumes(MediaType.APPLICATION_JSON)

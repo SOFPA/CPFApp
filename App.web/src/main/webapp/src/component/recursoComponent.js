@@ -1,3 +1,4 @@
+
 /* ========================================================================
  * Copyright 2014 SOFPA
  *
@@ -152,4 +153,5 @@ define(['component/_recursoComponent', 'model/recursosPorAvalarModel'], function
         }
     });
     return App.Component.RecursoComponent;
+
 });
