@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Application</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="src/css/lista.css">
+        <script src="./js/vendor/jquery-1.9.1.js"></script>
+        <script src="./js/vendor/bootstrap.min.js"></script>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="../../assets/js/html5shiv.js"></script>
+          <script src="../../assets/js/respond.min.js"></script>
+        <![endif]-->
+        <script type="text/javascript">
+            function redirectFrame(url) {
+                $('#container').attr('src', url);
+                $('#objetivo').hide();
+                $('#container').css('height', ($(window).height() - $('#header').height() - 30) + 'px');
+            }
+            
+            </script>
+    </head>
+    <body>
+         
+   
+        </br>
+      <header>  
+   <nav class="navbar navbar-inverse " role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Clinica de Problemas</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#" onclick="redirectFrame('recurso.html');return false;">Banco de Recursos</a></li>
+        <li class="active"><a href="#" onclick="redirectFrame('recurso.html');return false;">UTI</a></li>
+        <li class="active"><a href="#" onclick="redirectFrame('recurso.html');return false;">Monitores</a></li>
+        <li class="active"><a href="#" onclick="redirectFrame('recurso.html');return false;">Contactanos</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+      </header>
+         
+        </br>
+
+
+            <!--div class="btn-group navbar-default menu" style="width: 100%;">
+	            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+	                Menu <span class="caret"></span>
+	            </button>
+	            <ul class="dropdown-menu" role="menu">
+	                <li><a href="#" onclick="redirectFrame('usuario.html'); return false;">Usuario</a></li>
+    
+	                <li><a href="#" onclick="redirectFrame('recurso.html'); return false;">Recurso</a></li>
+    
+	                <li><a href="#" onclick="redirectFrame('comentario.html'); return false;">Comentario</a></li>
+    
+	                <li class="divider"></li>
+	          			      <li><a href="#" onclick="redirectFrame('recursoMaster.html'); return false;">Recurso Master</a></li>
+       				
+	            </ul>
+	        </div-->
+        <div id ="objetivo">
+            </div>
+        <iframe id="container" src="" style="width: 100%; height: 90%; border: 0; margin: 0;">
+        </iframe> 
+        <!--div id="infoClinica">
+                <p style="text-align: justify;">La Cl�nica de Problemas del Departamento de F�sica es un centro de aprendizaje que ofrece una variedad de servicios a estudiantes de pregrado que necesiten ayuda adicional o instrucci�n en los cursos de F�sica General. El centro es coordinado por un f�sico profesional, que con la colaboraci�n de monitores competentes � con capacitaci�n docente constante- prestar�n un servicio eficiente, oportuno y de calidad.</p>
+                <p> </p>
+                <p style="text-align: justify;"><strong>SERVICIOS: </strong></p>
+                <p style="text-align: justify;">- Atenci�n personalizada. <br />- Pr�stamo de libros de f�sica fundamental. <br />- Acceso a banco de talleres y parciales. <br />- <a href="https://docs.google.com/spreadsheet/viewform?usp=sharing&amp;formkey=dDJHamJsMHhNOGdxdGlQeEpMUFRMOWc6MQ#gid=0" target="_blank">Posibilidad de participar en las Jornadas de Resoluci�n de Problemas � U.T.I.</a></p>
+                <p> </p>
+                <p>El centro de aprendizaje est� disponible para soporte en los siguientes cursos magistrales: <br /><br /> FISI1000 � Pref�sica <br /> FISI1012 � F�sica B�sica 1 <br /> FISI1018 � F�sica 1 <br /> FISI1022 � F�sica B�sica 2 <br /> FISI1028 � F�sica 2 <br /> FISI1038 � Ondas y Fluidos <br /> FISI1048 � F�sica Moderna <br /> Incluyendo las clases complementarias y experimentales respectivas.</p>
+                <p> </p>
+
+        </div-->
+    </body>
+</html>
