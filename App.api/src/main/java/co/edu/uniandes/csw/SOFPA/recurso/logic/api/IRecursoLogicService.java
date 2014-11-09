@@ -39,4 +39,6 @@ public interface IRecursoLogicService extends _IRecursoLogicService {
     public RecursoPageDTO getRecursosPorTema(String tema);
 
     public RecursoPageDTO getRecursosPorAvalar();
+
+    public RecursoPageDTO getRecursobyName(String name);
 }

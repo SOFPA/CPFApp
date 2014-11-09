@@ -64,7 +64,17 @@ public class RecursoService extends _RecursoService {
 //        }
 //        return super.getRecursos(page, maxRecords);
 //    }
-    
+     @GET
+     @Override
+    public RecursoPageDTO getRecursos(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
+         MultivaluedMap<String, String> queryParams;
+        queryParams = uriInfo.getQueryParameters();
+         String name = queryParams.getFirst("name");
+         if (name != null && !name.isEmpty()) {
+             return recursoLogicService.getRecursobyName(name);
+         }
+        return super.getRecursos(page, maxRecords);
+     }
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

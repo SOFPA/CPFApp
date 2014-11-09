@@ -48,6 +48,18 @@ define(['controller/_recursoController', 'delegate/recursoDelegate'], function()
                 Backbone.trigger(self.componentId + '-' + 'error', {event: 'recurso-search', view: self, id: '', data: data, error: 'Error in recurso search'});
             });
         },
+        recursoSearch2: function (callback,context) {
+             var self = this;
+             var model = $('#' + this.componentId + '-recursoForm').serializeObject();
+             this.currentModel.set(model);
+            var delegate = new App.Delegate.RecursoDelegate();
+             delegate.search(self.currentModel, function (data) {
+                self.currentList.reset(data.records);
+                callback.call(context,{data: self.currentList, page: 1, pages: 1, totalRecords: self.currentList.lenght})
+             }, function (data) {
+                 Backbone.trigger(self.componentId + '-' + 'error', {event: 'recurso-search', view: self, id: '', data: data, error: 'Error in recurso search'});
+             });
+      },
         recursosPorAvalar: function(callback, context) {
             var self = this;
             var model = $('#' + this.componentId + '-recursoForm').serializeObject();

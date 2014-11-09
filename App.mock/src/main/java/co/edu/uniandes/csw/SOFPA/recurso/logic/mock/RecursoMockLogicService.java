@@ -47,4 +47,11 @@ public class RecursoMockLogicService extends _RecursoMockLogicService implements
     public RecursoPageDTO getRecursosPorAvalar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public RecursoPageDTO getRecursobyName(String name) {
+        RecursoPageDTO response = new RecursoPageDTO();
+            response.setTotalRecords(Long.parseLong(data.size()+""));
+            response.setRecords(data);
+            return response; //To change body of generated methods, choose Tools | Templates.
+    }
 }

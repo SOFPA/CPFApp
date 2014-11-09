@@ -49,6 +49,9 @@ public class RecursoLogicService extends _RecursoLogicService implements IRecurs
     public RecursoPageDTO getRecursosPorTema(String tema){
         return persistance.getRecursosPorTema(tema);
     }
+    public RecursoPageDTO getRecursobyName(String name) {
+         return persistance.getRecursobyName(name);
+    }
     
     public RecursoPageDTO getRecursosPorAvalar(){
         return persistance.getRecursosPorAvalar();

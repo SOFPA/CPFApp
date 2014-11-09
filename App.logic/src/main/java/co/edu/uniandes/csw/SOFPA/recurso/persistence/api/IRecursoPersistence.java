@@ -39,4 +39,6 @@ public interface IRecursoPersistence extends _IRecursoPersistence {
     public RecursoPageDTO getRecursosPorTema(String tema); 
 
     public RecursoPageDTO getRecursosPorAvalar();
+
+    public RecursoPageDTO getRecursobyName(String name);
 }
