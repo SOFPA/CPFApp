@@ -6,13 +6,46 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Application</title>
+        <title>Clinica de Problemas</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="src/css/lista.css">
         <script src="./js/vendor/jquery-1.9.1.js"></script>
         <script src="./js/vendor/bootstrap.min.js"></script>
+        
+        <!-- scripts para index2 especificamente -->
+        
+            <!-- Bootstrap Core CSS -->
+            <link href="./src/index2/css/bootstrap.min.css" rel="stylesheet">
+
+            <!-- Custom CSS -->
+            <link href="./src/index2/css/agency.css" rel="stylesheet">
+
+            <!-- Custom Fonts -->
+            <link href="./src/index2/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+            <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+            <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+            <!-- jQuery -->
+            <script src="./src/index2/js/jquery.js"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="./src/index2/js/bootstrap.min.js"></script>
+
+            <!-- Plugin JavaScript -->
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+            <script src="./src/index2/js/classie.js"></script>
+            <script src="./src/index2/js/cbpAnimatedHeader.js"></script>
+
+            <!-- Contact Form JavaScript -->
+            <script src="./src/index2/js/jqBootstrapValidation.js"></script>
+            <script src="./src/index2/js/contact_me.js"></script>
+
+            <!-- Custom Theme JavaScript -->
+            <script src="./src/index2/js/agency.js"></script>
+        
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
           <script src="../../assets/js/html5shiv.js"></script>
@@ -20,44 +53,59 @@ and open the template in the editor.
         <![endif]-->
         <script type="text/javascript">
             function redirectFrame(url) {
-                $('#container').attr('src', url);
-                $('#objetivo').hide();
-                $('#container').css('height', ($(window).height() - $('#header').height() - 30) + 'px');
+                $('#contenedor12').attr('src', url);
+                $('#contenedor').hide();
+                $('#gato').hide();
+                $('#contenedor12').css('height', ($(window).height() - $('#header').height() - 30) + 'px');
             }
             
             </script>
     </head>
-    <body>
-         
-   
+    <body> 
         </br>
-      <header>  
-   <nav class="navbar navbar-inverse " role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Clinica de Problemas</a>
-    </div>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll ">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="index2.html">Clinica de Problemas</a>
+            </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#" onclick="redirectFrame('recurso.html');return false;">Banco de Recursos</a></li>
-        <li class="active"><a href="#" onclick="redirectFrame('recurso.html');return false;">UTI</a></li>
-        <li class="active"><a href="#" onclick="redirectFrame('recurso.html');return false;">Monitores</a></li>
-        <li class="active"><a href="#" onclick="redirectFrame('recurso.html');return false;">Contactanos</a></li>
-        
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-      </header>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#" onclick="redirectFrame('recurso.html');return false;">Banco de Recursos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">UTI</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">Monitores</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">Contactanos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://fisica.uniandes.edu.co">Departamento de F&iacute;sica</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://uniandes.edu.co">Uniandes</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
          
         </br>
 
@@ -78,9 +126,56 @@ and open the template in the editor.
        				
 	            </ul>
 	        </div-->
-        <div id ="objetivo">
+            <header id="contenedor" class="container">
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-lead-in">Clinica de Problemas</div>
+                    <div class="intro-heading">Resuelve tus problemas de F&iacute;sica</div>
+                    <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+                </div>
             </div>
-        <iframe id="container" src="" style="width: 100%; height: 90%; border: 0; margin: 0;">
+        </header>
+        
+        <div id="gato">    
+        <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Servicios</h2>
+                    <h3 class="section-subheading text-muted">Pref&iacute;sica - F&iacute;sica B&aacute;sica 1 y 2- F&iacute;sica 1 y 2 - Ondas y Fluidos - F&iacute;sica Moderna</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Atenci&oacute;n personalizada</h4>
+                    <p class="text-muted">Resuelve las preguntas que tengas sobre problemas y ejercicios de F&iacute;sica General</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Acceso a banco de recursos</h4>
+                    <p class="text-muted"> Accede a talleres, ejercicios, parciales y problemas </p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">UTI</h4>
+                    <p class="text-muted">Posibilidad de participar en las jornadas de resoluci&oacute;n de Problemas</p>
+                </div>
+            </div>
+        </div>
+    </section>  
+        </div>
+        <iframe id="contenedor12" src="" style="width: 100%; height: 90%; border: 0; margin: 0;">
+            
         </iframe> 
         <!--div id="infoClinica">
                 <p style="text-align: justify;">La Cl�nica de Problemas del Departamento de F�sica es un centro de aprendizaje que ofrece una variedad de servicios a estudiantes de pregrado que necesiten ayuda adicional o instrucci�n en los cursos de F�sica General. El centro es coordinado por un f�sico profesional, que con la colaboraci�n de monitores competentes � con capacitaci�n docente constante- prestar�n un servicio eficiente, oportuno y de calidad.</p>

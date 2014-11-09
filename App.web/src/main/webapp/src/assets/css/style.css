@@ -20,6 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: 40px;
+        color: #fed136;
 }
 
 h3 {
@@ -63,7 +64,7 @@ a:after {
     transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 .navbar-inverse .navbar-nav > li > a {
-    color: #c6d550;
+    color: #fed136;
 }
 
 .alignleft {
@@ -79,12 +80,12 @@ a:after {
 
 .btn-theme  {
   color: #fff;
-  background-color: #fd680e;
-  border-color: #fd680e;
+  background-color: #fed136;
+  border-color: #fed136;
 }
 .btn-theme:hover  {
   color: #fff;
-  background-color: #444;
+  background-color: #fed136;
   border-color: #444;
 }
 form.signup {
@@ -102,9 +103,10 @@ form.signup input.form-control:focus {
 /* Nav */
 
 a.navbar-brand {
-	color: #fff !important;
+	color: #fed136;
 	font-weight: 900;
 	text-transform: uppercase;
+        
 }
 a.navbar-brand:hover {
     color: #ddd !important;
@@ -182,11 +184,12 @@ h2.subtitle {
 
 /* footer */
 #footer {
-	background: #fd680e;
+	background-color: #fed136;
 	padding: 20px 0 5px;
 }
 
 p.copyright {
+        background-color: #fed136;
 	color: #fff;
 	text-align: center;
 }	
