@@ -65,7 +65,7 @@ define(['component/_recursoComponent', 'model/recursosPorAvalarModel'], function
             this.toolbarComponent.addButton({
                 name: 'exec-avalar',
                 displayName: 'Avalar',
-                icon: '',
+                icon: 'glyphicon-thumbs-up',
                 show: false
             },
             this.execAvalar,
@@ -149,7 +149,7 @@ define(['component/_recursoComponent', 'model/recursosPorAvalarModel'], function
         },
         mostrarRecurso: function()
         {
-            this.componentController.mostrarRecurso();
+            
         }
     });
     return App.Component.RecursoComponent;

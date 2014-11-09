@@ -16,6 +16,7 @@
         <script type="text/javascript">
             function redirectFrame(url) {
                 $('#container').attr('src', url);
+                $('#objetivo').hide();
                 $('#container').css('height', ($(window).height() - $('#header').height() - 30) + 'px');
             }
             
@@ -23,41 +24,36 @@
     </head>
     <body>
          
-         <div class="container">
-             <a href="http://uniandes.edu.co"><object data="https://cmua.uniandes.edu.co/images/logo_uniandes2.png" height="88" width="210" align="left"></object></a>
-             <h1 style="text-align: right"><a href="index.html">Clinica de Problemas</a></h1>   
-         </div>    
+   
         </br>
-        
-         <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
-  <div class="container">
+      <header>  
+   <nav class="navbar navbar-inverse " role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      
+      <a class="navbar-brand" href="index.html">Clinica de Problemas</a>
     </div>
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li>
-                              <a href="#" onclick="redirectFrame('recurso.html'); return false;">Banco de Recursos</a>
-                          </li>
-                          <li>
-                              <a href="#" onclick="redirectFrame('recurso.html'); return false;">U.T.I</a>
-                          </li>
-                          <li>
-                              <a href="#" onclick="redirectFrame('recurso.html'); return false;">Quienes Somos</a>
-                          </li>
+        <li class="active"><a href="#" onclick="redirectFrame('recurso.html');return false;">Banco de Recursos</a></li>
+        <li class="active"><a href="#" onclick="redirectFrame('recurso.html');return false;">UTI</a></li>
+        <li class="active"><a href="#" onclick="redirectFrame('recurso.html');return false;">Monitores</a></li>
+        <li class="active"><a href="#" onclick="redirectFrame('recurso.html');return false;">Contactanos</a></li>
+        
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-       
-      </ul>
-    </nav>
-  </div>
-</header>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+      </header>
+         
         </br>
 
 
@@ -77,7 +73,9 @@
        				
 	            </ul>
 	        </div-->
-        <iframe id="container" src="" style="width: 100%; height: 100%; border: 0; margin: 0;">
+        <div id ="objetivo">
+            </div>
+        <iframe id="container" src="" style="width: 100%; height: 90%; border: 0; margin: 0;">
         </iframe> 
         <!--div id="infoClinica">
                 <p style="text-align: justify;">La Cl�nica de Problemas del Departamento de F�sica es un centro de aprendizaje que ofrece una variedad de servicios a estudiantes de pregrado que necesiten ayuda adicional o instrucci�n en los cursos de F�sica General. El centro es coordinado por un f�sico profesional, que con la colaboraci�n de monitores competentes � con capacitaci�n docente constante- prestar�n un servicio eficiente, oportuno y de calidad.</p>
