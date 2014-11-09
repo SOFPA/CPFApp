@@ -88,31 +88,6 @@ define(['component/_recursoComponent', 'model/recursosPorAvalarModel'], function
                 this.componentController.list(null, this.list, this);
             },
                     this);
-        this.toolbarComponent.addButton({
-                name: 'exec-search2',
-                displayName: 'BuscarporNombre',
-               icon: 'glyphicon-search',
-              show: false
-           },
-            this.execSearch,
-             this);
-           this.toolbarComponent.addButton({
-               name: 'cancel-search2',
-               displayName: 'Cancelar Busqueda',
-                 icon: 'glyphicon-remove-sign',
-                 show: false
-            },
-             function(){
-               this.toolbarComponent.showButton('create');
-                this.toolbarComponent.showButton('refresh');
-                this.toolbarComponent.hideButton('print');
-               this.toolbarComponent.showButton('search');
-                 this.toolbarComponent.hideButton('cancel-search2');
-                 this.toolbarComponent.hideButton('exec-search2');
-                this.toolbarComponent.render();
-                 this.componentController.list(null, this.list, this);
-           },
-             this);  
          },
         create: function()
         {

@@ -60,8 +60,8 @@ public class RecursoPersistence extends _RecursoPersistence  implements IRecurso
         Query count = entityManager.createQuery("select count(r) from RecursoEntity r");
         Long regCount = 0L;
         regCount = Long.parseLong(count.getSingleResult().toString());
-        Query q = entityManager.createQuery("SELECT u FROM RecursoEntity WHERE u.tema like :tema");
-        q.setParameter("Parameter", "%"+tema+"%");
+        Query q = entityManager.createQuery("SELECT r FROM RecursoEntity WHERE r.tema like :tema");
+        q.setParameter("tema", "%"+tema+"%");
         
         RecursoPageDTO response = new RecursoPageDTO();
         response.setTotalRecords(regCount);
@@ -70,13 +70,13 @@ public class RecursoPersistence extends _RecursoPersistence  implements IRecurso
     }
     
      @SuppressWarnings("unchecked")
-    public RecursoPageDTO getRecursobyName(String name)
+    public RecursoPageDTO getRecursobyName(String tema)
     {
         Query count = entityManager.createQuery("select count(r) from RecursoEntity r");
         Long regCount = 0L;
         regCount = Long.parseLong(count.getSingleResult().toString());
-        Query q = entityManager.createQuery("SELECT r FROM RecursoEntity WHERE r.name like :name");
-        q.setParameter("Parameter", "%"+name+"%");
+        Query q = entityManager.createQuery("SELECT r FROM RecursoEntity WHERE r.tema like :tema");
+        q.setParameter("tema", "%"+tema+"%");
         
         RecursoPageDTO response = new RecursoPageDTO();
         response.setTotalRecords(regCount);

@@ -32,7 +32,7 @@ define(['delegate/_recursoDelegate'], function() {
         search: function(recurso, callback, callbackError ){
             console.log('Recurso Search: ');
             $.ajax({
-                url: '/App.web/webresources/Recurso',
+                url: '/App.web/webresources/Recurso/',
                 type: 'GET',
                 data: $.param(recurso.toJSON()),
                 contentType: 'application/json'
@@ -41,21 +41,7 @@ define(['delegate/_recursoDelegate'], function() {
             },this)).error(_.bind(function(data){
                 callbackError(data);
             },this));
-        },
-        search2: function(recurso, callback, callbackError ){
-            console.log('Recurso Search: ');
-            $.ajax({
-                url: '/App.web/webresources/Recurso',
-                type: 'GET',
-                data: $.param(recurso.toJSON()),
-                contentType: 'application/json'
-            }).done(_.bind(function(data) {
-                callback(data);
-            },this)).error(_.bind(function(data){
-                callbackError(data);
-            },this));
-        },
-        
+        },    
         recursosPorAvalar: function(recurso, callback, callbackError ){
             console.log('Recurso Search: ');
             $.ajax({
