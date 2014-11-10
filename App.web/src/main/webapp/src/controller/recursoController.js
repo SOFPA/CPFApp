@@ -49,6 +49,7 @@ define(['controller/_recursoController', 'delegate/recursoDelegate'], function()
             });
         },
         recursosPorAvalar: function(callback, context) {
+            this.currentModel = new this.modelClass({componentId: this.componentId});
             var self = this;
             var model = $('#' + this.componentId + '-recursoForm').serializeObject();
             this.currentModel.set(model);
